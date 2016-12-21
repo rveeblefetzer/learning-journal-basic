@@ -5,25 +5,27 @@ import os
 
 THIS_DIR = os.path.dirname(__file__)
 
+
 @view_config(route_name='home', renderer='string')
 def home_page(request):
     """View for the homepage."""
-    file_path = os.path.join(THIS_DIR, 'data', 'sample.txt')
-    file_data = io.open(file_path).read()
+#    file_path = os.path.join(THIS_DIR, 'data', 'sample.txt')
+#   file_data = io.open(file_path).read()
     # return Response(file_data)
-    return file_data
+    return "this is working. i think."
 
 
-@view_confit(route_name='detail', 'renderer', )
+@view_config(route_name='detail', renderer='string')
 def detail(request):
+    """View for journal entry."""
     return ""
 
 
-@view_config(route_name='create', 'renderer', )
-    def create(request):
+@view_config(route_name='create', renderer='string')
+def create(request):
         return ""
 
 
-@view_config(route_name='edit', 'renderer')
-    def edit(request)
+@view_config(route_name='edit', renderer='string')
+def edit(request):
     return ""

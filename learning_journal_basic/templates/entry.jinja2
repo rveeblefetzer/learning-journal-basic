@@ -1,0 +1,12 @@
+{% extends "layout.jinja2" %}
+{% block title %}Learning Journal Entry Page{% endblock %}
+
+{% block body %}
+    <h1>Entry</h1>
+    <a href="{{ request.route_url('edit_form', id=ENTRIES.id)}}" class="button">Edit this entry</a>
+    <section class="detail-journal-entry">
+        <h1 class="detail-title">{{ ENTRIES['title'] }}</h1>
+        <article class="detail-body">{{ ENTRIES['body'] }}</article>
+        <div class="detail-date">{{ ENTRIES['creation_date'] }}}</div>
+    </section>
+{% endblock %}

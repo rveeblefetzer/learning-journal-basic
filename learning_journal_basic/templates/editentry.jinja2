@@ -1,0 +1,20 @@
+{% extends "layout.jinja2" %}
+{% block title %}Learning Journal Edit Entry Page{% endblock %}
+
+{% block body %}
+    <h1>Edit Entry</h1>
+    <section class="edit-journal-entry">
+        <form id="edit-journal" class="edit-journal-entry-form">
+            <h3>Edit your journal entry below</h3>
+            <div class="formsections">
+                <label for="title">Title:</label>
+                <input type="text" name="title" size="25" placeholder="{{ENTRIES['title']}}"/>
+            </div>
+            <div class="formsections">
+                <label for="body">Body:</label>
+                <textarea form="edit-journal" type="text" name="body" size="800" placeholder="{{ENTRIES['body']}}"></textarea>
+            </div>
+        </form>
+        <button type="submit">Publish</button>
+    </section>
+{% endblock %}

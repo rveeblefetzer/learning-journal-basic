@@ -1,0 +1,15 @@
+{% extends "layout.jinja2" %}
+{% block title %}rickv's learning journal{% endblock %}
+
+{% block body %}
+    <h1>Rick's Learning Journal</h1>
+    <a href="/journal/new-entry" class="button">Create a new entry</a>
+    <section id="list-journal-entries-section-on-index">
+        <h3>Journal Entries</h3>
+        <ul>
+            {% for item in ENTRIES %}
+            <li><a href="/journal/{{ENTRIES[item]['id']}}" class="journal-titles-on-index">{{ENTRIES[item]['title']}}, {{ENTRIES[item]['creation_date']}}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

@@ -4,7 +4,7 @@
     <title>{% block title %} rickv's learning journal {% endblock %}</title>
 
    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
     <link href="css/clean-blog.min.css" rel="stylesheet">
@@ -25,7 +25,7 @@
 <body>
     <header>
         <h3><nav>
-            <a href="{{ request.route_url('home')}}">Home</a>
+            <a href="{{ request.route_url('index')}}">Index</a>
             <a href="{{ request.route_url('form') }}">New Entry</a>
         </nav></h3>
     </header>

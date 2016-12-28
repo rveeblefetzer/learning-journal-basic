@@ -14,7 +14,7 @@ def homepage(request):
 
 def detail(request):
     """View for the details page, showing a specific journal entry."""
-    file_path = os.path.join(THIS_DIR, 'templates', 'entry.html')
+    file_path = os.path.join(THIS_DIR, 'data', 'entry.html')
     file_data = io.open(file_path).read()
     return Response(file_data)
 
@@ -32,12 +32,34 @@ def edit(request):
     file_data = io.open(file_path).read()
     return Response(file_data)
 
+
+def assignment_entry(request):
+    """View for page of assignment's journal entry."""
+    file_path = os.path.join(THIS_DIR, 'data/entry.html')
+    file_data = io.open(file_path).read()
+    return Response(file_data)
+
+
+def assignment_write(request):
+    """View for page of assignment's new-post page."""
+    file_path = os.path.join(THIS_DIR, 'templates/write.html')
+    file_data = io.open(file_path).read()
+    return Response(file_data)
+
+
+def assignment_edit(request):
+    """View for page of assignment's journal entry."""
+    file_path = os.path.join(THIS_DIR, 'templates/editentry.html')
+    file_data = io.open(file_path).read()
+    return Response(file_data)
+
+
 def includeme(config):
-    """"""
+    """Connect views to their routes."""
     config.add_view(homepage, route_name='home')
-
     config.add_view(detail, route_name='detail')
-
-    config.add_view(create, route_name='form')
-
-    config.add_view(edit, route_name='edit_form')
+    config.add_view(create, route_name='write')
+    config.add_view(edit, route_name='edit')
+    config.add_view(assignment_entry, route_name='assignment_entry')
+    config.add_view(assignment_write, route_name='assignment_write')
+    config.add_view(assignment_edit, route_name='assignment_edit')

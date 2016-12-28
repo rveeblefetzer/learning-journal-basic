@@ -1,11 +1,9 @@
-appnope==0.1.0
 beautifulsoup4==4.5.1
 coverage==4.2
 decorator==4.0.10
 ipython==5.1.0
 ipython-genutils==0.1.0
 Jinja2==2.8
--e git+git@github.com:rveeblefetzer/learning-journal-basic.git@8fe18a8beff0349c8f915d498a23aa0f81fa023c#egg=learning_journal_basic
 Mako==1.0.6
 MarkupSafe==0.23
 PasteDeploy==1.5.2

@@ -7,6 +7,7 @@ def includeme(config):
     config.add_route('edit', '/journal/{id:\d+}/edit-entry')
 
     # Routes to connect to proper pages for assignment#
+    config.add_route('assignment_home', 'index.html')
     config.add_route('assignment_entry', '/entry.html')
     config.add_route('assignment_write', '/write.html')
     config.add_route('assignment_edit', '/editentry.html')

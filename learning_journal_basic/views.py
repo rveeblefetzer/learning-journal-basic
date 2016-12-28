@@ -7,28 +7,28 @@ THIS_DIR = os.path.dirname(__file__)
 
 def homepage(request):
     """View for the homepage, listing journal entries."""
-    file_path = os.path.join(THIS_DIR, 'templates', 'index.html')
+    file_path = os.path.join(THIS_DIR, 'templates/index.html')
     file_data = io.open(file_path).read()
     return Response(file_data)
 
 
 def detail(request):
     """View for the details page, showing a specific journal entry."""
-    file_path = os.path.join(THIS_DIR, 'data', 'entry.html')
+    file_path = os.path.join(THIS_DIR, 'data/entry.html')
     file_data = io.open(file_path).read()
     return Response(file_data)
 
 
 def create(request):
     """View for page to write a new journal entry."""
-    file_path = os.path.join(THIS_DIR, 'templates', 'write.html')
+    file_path = os.path.join(THIS_DIR, 'templates/write.html')
     file_data = io.open(file_path).read()
     return Response(file_data)
 
 
 def edit(request):
     """View for page to edit an existing journal entry."""
-    file_path = os.path.join(THIS_DIR, 'templates', 'editentry.html')
+    file_path = os.path.join(THIS_DIR, 'templates/editentry.html')
     file_data = io.open(file_path).read()
     return Response(file_data)
 

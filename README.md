@@ -8,20 +8,15 @@ Site is deployed on Heroku [here](https://learning-journal-python-401.herokuapp.
 
 ##Routes used:
 
-`config.add_static_view('static', 'static', cache_max_age=3600)`
-For serving static files such as CSS and images.
+`config.add_static_view('static', 'static', cache_max_age=3600)`: For serving static files such as CSS and images.
 
-`config.add_route('homepage', '')`
-For serving up homepage at root URL. Could not get this to work linking to an explicit index.html and /.
+`config.add_route('homepage', '')`: For serving up homepage at root URL. Could not get this to work linking to an explicit index.html and /.
 
-`config.add_route('detail', 'journal/{id:\d+}.{html}')`
-For serving a specific journal entry.
+`config.add_route('detail', 'journal/{id:\d+}.{html}')`: For serving a specific journal entry.
 
-`config.add_route('write', 'journal/write.{html}')`
-For giving a page to write a new journal entry.
+`config.add_route('write', 'journal/write.{html}')`: For giving a page to write a new journal entry.
 
-`config.add_route('edit', 'journal/{id:\d+}/editentry.{html}')`
-For editing a journal entry.
+`config.add_route('edit', 'journal/{id:\d+}/editentry.{html}')`: For editing a journal entry.
 
 
 ##Views used:

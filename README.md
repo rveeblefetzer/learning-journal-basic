@@ -40,4 +40,4 @@ For editing a journal entry.
 
 ```edit```: For a page to edit an exisiting journal entry.
 
-These methods were refactored to conflate the open, join and read methods for constructing the URL. Thanks to TA [David Smith](https://github.com/Bl41r), who did it in his learning jounal [here](https://github.com/Bl41r/learning-journal-python/blob/step1/website/views.py).
+These methods were refactored to conflate the open, join and read methods for constructing the URL. Thanks to TA [David Smith](https://github.com/Bl41r), who did it in his learning journal [here](https://github.com/Bl41r/learning-journal-python/blob/step1/website/views.py).

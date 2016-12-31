@@ -6,11 +6,11 @@ THIS_DIR = os.path.dirname(__file__)
 
 
 ENTRIES = {
-    1: {"id": 1, "title": "Moving on and building", "creation_date": "20161229", "body": "Wrapping this, and getting ready for databases."},
-    2: {"id": 2, "title": "Letting it jell.", "creation_date": "20161228", "body": "Making it solid."},
+    5: {"id": 5, "title": "Moving on and building", "creation_date": "20161229", "body": "Wrapping this, and getting ready for databases."},
+    4: {"id": 4, "title": "Letting it jell.", "creation_date": "20161228", "body": "Making it solid."},
     3: {"id": 3, "title": "Getting it together.", "creation_date": "20161227", "body": "Making headway with Pyramid."},
     2: {"id": 2, "title": "Spending the time.", "creation_date": "20161226", "body": "Reading, and doing."},
-    5: {"id": 5, "title": "'Drinking from a firehose'", "creation_date": "20161225", "body": "After faceplanting on servers, here's Pyramid."},
+    1: {"id": 1, "title": "'Drinking from a firehose'", "creation_date": "20161225", "body": "After faceplanting on servers, here's Pyramid."},
 }
 
 

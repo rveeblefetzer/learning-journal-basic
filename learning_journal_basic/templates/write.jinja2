@@ -1,0 +1,42 @@
+{% extends "layout.jinja2" %}
+{% block title %}Learning Journal New Entry Page{% endblock %}
+
+{% block header %}
+<header  class="intro-header" style="background-image: url('{{ request.static_path('learning_journal_basic:static/img/about-bg.jpg') }}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Scribble here.</h1>
+                    <hr class="small">
+                    <span class="subheading">Reflect, record. What got learned?</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </header>
+{% endblock %}
+{% block body %}
+    <!-- Main Content -->
+    <main class="container">
+        <div class="col-md-10">
+            <form>
+              <div class="form-group">
+                <label for="title">Hed</label>
+                <input type="text" placeholder="Headline" class="form-control" id="title">
+              </div>
+              <div class="form-group">
+                <label for="tags">Tags</label>
+                <input type="text" placeholder="Tags"class="form-control" id="tags">
+              </div>
+              <div>
+                <label for="body">Body</label>
+                <textarea rows="20" placeholder="Write like the wind." class="form-control input-lg" id="body"></textarea>
+              </div><br>
+              <button type="submit" class="btn btn-default">Post</button>
+            </form>
+        </div>
+    </main>
+
+    <hr>
+{% endblock %}

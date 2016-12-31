@@ -4,7 +4,7 @@ A learning journal for Code Fellows' Python 401 class.
 
 Uses [Start Bootstrap](http://startbootstrap.com/) - [Clean Blog](http://startbootstrap.com/template-overviews/clean-blog/)
 
-Site is deployed on Heroku [here](https://learning-journal-python-401.herokuapp.com/).
+This is version step2 using jinja2 templates; site is deployed on Heroku [here](https://learning-journal-step2.herokuapp.com/).
 
 ##Routes used:
 
@@ -30,3 +30,8 @@ Site is deployed on Heroku [here](https://learning-journal-python-401.herokuapp.
 `edit`: For a page to edit an exisiting journal entry.
 
 These methods were refactored to conflate the open, join and read methods for constructing the URL. Thanks to TA [David Smith](https://github.com/Bl41r), who did it in his learning journal [here](https://github.com/Bl41r/learning-journal-python/blob/step1/website/views.py).
+
+For this assignment, views also has a global ENTRIES variable, a list of sample journal entries in dictionary form.
+
+##Note on tests:
+All 8 tests working in py.test; tox, however, can't seem to import webtest, breaking those tests. Coverage report nonexistent.

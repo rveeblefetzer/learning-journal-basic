@@ -1,0 +1,37 @@
+{% extends "layout.jinja2" %}
+{% block title %}Learning Journal Edit Entry Page{% endblock %}
+
+{% block header %}
+    <header class="intro-header" style="background-image: url('{{ request.static_path('learning_journal_basic:static/img/about-bg.jpg') }}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading">
+                        <h1>Edit entry</h1>
+                        <hr class="small">
+                        <span class="subheading">Make amends. Add, correct, extend.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %} 
+
+{% block body %}
+    <main class="container">
+        <div class="col-md-10">
+            <h1>Edit journal entry</h1>
+                <section class="edit-journal-entry">
+                    <form id="edit-journal" class="edit-journal-entry-form">
+                        <div class="formsections">
+                            <label for="title">Hed:</label>
+                            <input type="text" id="title" class="form_control" placeholder="{{ ENTRIES['title'] }}"/>
+                        </div>
+                        <div class="formsections">
+                            <label for="body">Text:</label>
+                            <textarea form="edit-journal" type="text" name="body" rows="20" class="form-control input-lg" id="body" placeholder="{{ ENTRIES['body'] }}"></textarea>
+                        </div>
+                    </form>
+        <button type="submit">Publish</button>
+    </section>
+{% endblock %}

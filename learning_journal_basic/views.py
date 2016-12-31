@@ -1,4 +1,3 @@
-from pyramid.response import Response
 from pyramid.view import view_config
 import io
 import os
@@ -6,33 +5,34 @@ import os
 THIS_DIR = os.path.dirname(__file__)
 
 
+ENTRIES = {
+    5: {"id": 5, "title": "Moving on and building", "creation_date": "20161229", "body": "Wrapping this, and getting ready for databases."},
+    4: {"id": 4, "title": "Letting it jell.", "creation_date": "20161228", "body": "Making it solid."},
+    3: {"id": 3, "title": "Getting it together.", "creation_date": "20161227", "body": "Making headway with Pyramid."},
+    2: {"id": 2, "title": "Spending the time.", "creation_date": "20161226", "body": "Reading, and doing."},
+    1: {"id": 1, "title": "'Drinking from a firehose'", "creation_date": "20161225", "body": "After faceplanting on servers, here's Pyramid."},
+}
+
+
+@view_config(route_name="homepage", renderer="templates/index.jinja2")
 def homepage(request):
-    """View for the homepage, listing journal entries."""
-    page_data = open(os.path.join(THIS_DIR, 'templates/index.html')).read()
-    return Response(page_data)
+    """View the list page, displaying a list of journal entries."""
+    return {"ENTRIES": ENTRIES}
 
 
+@view_config(route_name="detail", renderer="templates/entry.jinja2")
 def detail(request):
-    """View for the details page, showing a specific journal entry."""
-    page_data = open(os.path.join(THIS_DIR, 'data/20161227.html')).read()
-    return Response(page_data)
+    """View an entry's page, displaying a certain entry."""
+    return {"ENTRIES": ENTRIES[int(request.matchdict['id'])]}
 
 
+@view_config(route_name="write", renderer="templates/write.jinja2")
 def write(request):
-    """View for page to write a new journal entry."""
-    page_data = open(os.path.join(THIS_DIR, 'templates/write.html')).read()
-    return Response(page_data)
+    """View the form page, displaying a form to write new blog posts."""
+    return {"ENTRIES": ENTRIES}
 
 
+@view_config(route_name="edit", renderer="templates/editentry.jinja2")
 def edit(request):
-    """View for page to edit an existing journal entry."""
-    page_data = open(os.path.join(THIS_DIR, 'templates/editentry.html')).read()
-    return Response(page_data)
-
-
-def includeme(config):
-    """Connect views to their routes."""
-    config.add_view(homepage, route_name='homepage')
-    config.add_view(detail, route_name='detail')
-    config.add_view(write, route_name='write')
-    config.add_view(edit, route_name='edit')
+    """View page for editing entries, displaying a form."""
+    return {"ENTRIES": ENTRIES[int(request.matchdict['id'])]}
